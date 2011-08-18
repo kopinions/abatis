@@ -1,1 +1,1 @@
-#summary QuickStart for using abatis
+#summary QuickStart for using aBatis
