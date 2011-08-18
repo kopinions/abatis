@@ -1,5 +1,5 @@
+#summary aBatis FAQ & common answers.
 #labels aBatis
-#aBatis FAQ & common answers. 
 
 = Introduction =
 <h1>*よくある質問*</h1>
