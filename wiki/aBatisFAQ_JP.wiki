@@ -1,8 +1,8 @@
 #summary aBatis FAQ & common answers.
 #labels aBatis
 
-= Introduction =
-<h1>*よくある質問*</h1><p><p>
+= よくある質問 =
+<p><p>
 *Q. aBatisがサポートしているOSは？*<p>
 A. aBatisはEclipseのプラグインとなっております。Eclipseを実行可能であればOSを問わず導入する事が出来ます。 <p><p>
 
