@@ -6,16 +6,16 @@
 *Q. aBatisがサポートしているOSは？*<p>
 A. aBatisはEclipseのプラグインとなっております。Eclipseを実行可能であればOSを問わず導入する事が出来ます。 
 
-*Q. aBatisがサポートしているEclipseのversionは？*
+*Q. aBatisがサポートしているEclipseのversionは？*<p>
 A. aBatisはEclipse 3.6 (Helios)に対応しています。 もしお使いのPCに入っているEclipseが最新で無い場合はアップデートをお勧めします。(2011/05 現在) 
 
-*Q. aBatisがサポートしているAndroidのversionは？*
+*Q. aBatisがサポートしているAndroidのversionは？*<p>
 A. aBatisはAndroid 1.6以降の機種に対応しています。 
 
-*Q. aBatisを使用する際にかかる費用はどのくらいですか？*
+*Q. aBatisを使用する際にかかる費用はどのくらいですか？*<p>
 A. aBatisはオープンソースソフトウェア(Apache 2.0)ですので無料でご利用頂けます。 
 
-*Q. テストコードはどのように記述するのですか？*
+*Q. テストコードはどのように記述するのですか？*<p>
 A. テストコードの書き方につきましては最新のrobotium-solo-javedoc ファイルを参照して下さい。 
 = Details =
 
