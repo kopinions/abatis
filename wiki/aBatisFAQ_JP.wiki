@@ -2,24 +2,19 @@
 #labels aBatis
 
 = Introduction =
-<h1>*よくある質問*</h1>
+<h1>*よくある質問*</h1><p><p>
 *Q. aBatisがサポートしているOSは？*<p>
-A. aBatisはEclipseのプラグインとなっております。Eclipseを実行可能であればOSを問わず導入する事が出来ます。 
+A. aBatisはEclipseのプラグインとなっております。Eclipseを実行可能であればOSを問わず導入する事が出来ます。 <p><p>
 
 *Q. aBatisがサポートしているEclipseのversionは？*<p>
-A. aBatisはEclipse 3.6 (Helios)に対応しています。 もしお使いのPCに入っているEclipseが最新で無い場合はアップデートをお勧めします。(2011/05 現在) 
+A. aBatisはEclipse 3.6 (Helios)に対応しています。 もしお使いのPCに入っているEclipseが最新で無い場合はアップデートをお勧めします。(2011/05 現在) <p><p>
 
 *Q. aBatisがサポートしているAndroidのversionは？*<p>
-A. aBatisはAndroid 1.6以降の機種に対応しています。 
+A. aBatisはAndroid 1.6以降の機種に対応しています。 <p><p>
 
 *Q. aBatisを使用する際にかかる費用はどのくらいですか？*<p>
-A. aBatisはオープンソースソフトウェア(Apache 2.0)ですので無料でご利用頂けます。 
+A. aBatisはオープンソースソフトウェア(Apache 2.0)ですので無料でご利用頂けます。 <p><p>
 
-*Q. テストコードはどのように記述するのですか？*<p>
-A. テストコードの書き方につきましては最新のrobotium-solo-javedoc ファイルを参照して下さい。 
+*Q.  はどのように記述するのですか？*<p>
+A.   を参照して下さい。<p><p> 
 = Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
