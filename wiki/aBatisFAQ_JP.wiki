@@ -4,10 +4,12 @@
 <h2>よくある質問 </h2>
 <p><p>
 <h3>*Q. aBatisがサポートしているOSは？*</h3><p>
-A. aBatisはEclipseのプラグインとなっております。Eclipseを実行可能であればOSを問わず導入する事が出来ます。 <p><p>
+A. aBatisはEclipseのプラグインとなっております。<p>
+Eclipseを実行可能であればOSを問わず導入する事が出来ます。 <p><p>
 
 <h3>*Q. aBatisがサポートしているEclipseのversionは？*</h3><p>
-A. aBatisはEclipse 3.6 (Helios)に対応しています。 もしお使いのPCに入っているEclipseが最新で無い場合はアップデートをお勧めします。(2011/05 現在) <p><p>
+A. aBatisはEclipse 3.6 (Helios)に対応しています。<p>
+ もしお使いのPCに入っているEclipseが最新で無い場合はアップデートをお勧めします。(2011/05 現在) <p><p>
 
 <h3>*Q. aBatisがサポートしているAndroidのversionは？*</h3><p>
 A. aBatisはAndroid 1.6以降の機種に対応しています。 <p><p>
