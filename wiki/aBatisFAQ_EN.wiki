@@ -1,0 +1,17 @@
+#summary aBatis FAQ & common answers.
+
+<h2>Frequently Asked Questions</h2>
+<p><p>
+<h3>*Q. Which versions of Eclipse does aBatis support?*</h3><p>
+A. Scirocco officially supports Eclipse 3.6 (Helios). 
+If your Eclipse version is not latest, 
+we recommend you to update your eclipse. 
+<p>
+ <p><p>
+
+<h3>*Which versions of Android does aBatis support?*</h3><p>
+A. aBatisはEclipse 3.6 (Helios)に対応しています。<p>
+もしお使いのPCに入っているEclipseが最新で無い場合はアップデートをお勧めします。(2011/05 現在) <p><p>
+
+<h3>*Q. aBatisがサポートしているAndroidのversionは？*</h3><p>
+A. aBatis supports Android 1.6 and up <p><p>
