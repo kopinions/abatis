@@ -1,10 +1,9 @@
-#summary One-sentence summary of this page.
 #labels aBatis
-aBatis FAQ & common answers. 
+#aBatis FAQ & common answers. 
 
 = Introduction =
 <h1>*よくある質問*</h1>
-*Q. aBatisがサポートしているOSは？*
+*Q. aBatisがサポートしているOSは？*<p>
 A. aBatisはEclipseのプラグインとなっております。Eclipseを実行可能であればOSを問わず導入する事が出来ます。 
 
 *Q. aBatisがサポートしているEclipseのversionは？*
