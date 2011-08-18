@@ -9,7 +9,7 @@ Eclipseを実行可能であればOSを問わず導入する事が出来ます�
 
 <h3>*Q. aBatisがサポートしているEclipseのversionは？*</h3><p>
 A. aBatisはEclipse 3.6 (Helios)に対応しています。<p>
- もしお使いのPCに入っているEclipseが最新で無い場合はアップデートをお勧めします。(2011/05 現在) <p><p>
+もしお使いのPCに入っているEclipseが最新で無い場合はアップデートをお勧めします。(2011/05 現在) <p><p>
 
 <h3>*Q. aBatisがサポートしているAndroidのversionは？*</h3><p>
 A. aBatisはAndroid 1.6以降の機種に対応しています。 <p><p>
