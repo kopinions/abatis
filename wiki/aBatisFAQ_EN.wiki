@@ -10,4 +10,4 @@ we recommend you to update your eclipse.
  <p><p>
 
 <h3>*Which versions of Android does aBatis support?*</h3><p>
-A. aBatis officially supports Android 1.6 and up。<p>
+A. aBatis supports Android 1.6 and up。<p>
