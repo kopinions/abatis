@@ -13,3 +13,6 @@ A. aBatis supports Android 1.6 and up。<p>
 
 <h3>*Q. Which versions of OS does aBatis support?*</h3><p>
 A. aBatis is a Plunin for Eclipse. It means you can use it no matter what hardware or operating system the program is running under.
+
+<h3>*Q. How much does it cost for using aBatis?*</h3><p>
+A. aBatis is open source, and free.There is no cost for using.
