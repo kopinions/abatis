@@ -1,7 +1,7 @@
 #summary QuickStart for using aBatis
 
-  設定 
-<img src="http://abatis.android-fun.jp/abatis_01.png" /><BR>図-1<BR>
+設定 <p>
+<img src="http://abatis.android-fun.jp/abatis_01.png" /><BR>   図-1<BR>
  valuesの下にsqlmaps.xml(ファイル名は任意)を作成する。（図-1参照）<BR><BR> 
 
 
@@ -25,16 +25,20 @@ nameにsqlidを指定してselect文を登録する。bindする値は'#'で囲�
 abatisインスタンスを取得し、parameter（map）とsqlidを渡して結果listを得る。<BR><BR>
 
 DB file名を省略した場合はdefault（database.db）名で生成される。<BR><BR>
+
+
+
 　例） {{{AbatisService abatisService = AbatisService.getInstance(getApplicationContext());}}}<BR><BR>　
 
 
-データ更新{{{(insert, update, delete)}}}
-<BR><BR>　nameにsqlidを指定してinsertおよびupdate文を登録する。bindする値は'#'で囲む。
-<BR><BR>　abatisインスタンスを取得し、parameter（map）とsqlidを渡して実行する。
-<BR><BR>　DB file名を省略した場合はdefault（database.db）名で生成される。
-<BR><BR>例） {{{AbatisService abatisService =AbatisService.getInstance(getApplicationContext());}}}
-<BR><BR>
-<BR>
-<BR>
-<BR>
-<BR>
+データ更新{{{(insert, update, delete)}}}<BR><BR>　
+
+nameにsqlidを指定してinsertおよびupdate文を登録する。bindする値は'#'で囲む。<BR><BR>　
+
+
+abatisインスタンスを取得し、parameter（map）とsqlidを渡して実行する。<BR><BR>　
+
+
+DB file名を省略した場合はdefault（database.db）名で生成される。<BR><BR>
+ 
+  例） {{{AbatisService abatisService =AbatisService.getInstance(getApplicationContext());}}}<BR><BR>
