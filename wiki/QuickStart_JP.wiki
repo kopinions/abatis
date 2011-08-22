@@ -9,8 +9,8 @@
 <BR><BR> nameにsqlidを指定してselect文を登録する。bindする値は'#'で囲む。
 <BR><BR> abatisインスタンスを取得し、parameter（map）とsqlidを渡して結果listを得る。
 <BR><BR> DB file名を省略した場合はdefault（database.db）名で生成される。
-<BR><BR>　例）AbatisService abatisService = AbatisService.getInstance(getApplicationContext());
-<BR><BR>　データ更新(insert, update, delete)
+<BR><BR>　例）{{{AbatisService abatisService = AbatisService.getInstance(getApplicationContext());}}}
+<BR><BR>　データ更新{{{(insert, update, delete)}}}
 <BR><BR>　nameにsqlidを指定してinsertおよびupdate文を登録する。bindする値は'#'で囲む。
 <BR><BR>　abatisインスタンスを取得し、parameter（map）とsqlidを渡して実行する。
 <BR><BR>　DB file名を省略した場合はdefault（database.db）名で生成される。
