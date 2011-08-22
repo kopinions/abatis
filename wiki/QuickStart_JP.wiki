@@ -41,5 +41,3 @@ abatisインスタンスを取得し、parameter（map）とsqlidを渡して実
 DB file名を省略した場合はdefault（database.db）名で生成される。<BR><BR>
  
   例） {{{AbatisService abatisService =AbatisService.getInstance(getApplicationContext());}}}<BR><BR>
-
-</Table>
