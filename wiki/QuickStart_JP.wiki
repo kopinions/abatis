@@ -2,20 +2,20 @@
 
   設定 
 
-<BR> valuesの下にsqlmaps.xml(ファイル名は任意)を作成する。
-<BR> nameをinitializeし、sqlを登録する。
-<BR> DB fileが存在しない場合（アプリ初回起動時）このsqlでdb初期化が行われる。
-<BR> データ取得(select)
-<BR> nameにsqlidを指定してselect文を登録する。bindする値は'#'で囲む。
-<BR> abatisインスタンスを取得し、parameter（map）とsqlidを渡して結果listを得る。
-<BR> DB file名を省略した場合はdefault（database.db）名で生成される。
-<BR>　例）AbatisService abatisService = AbatisService.getInstance(getApplicationContext());
-<BR>　データ更新(insert, update, delete)
-<BR>　nameにsqlidを指定してinsertおよびupdate文を登録する。bindする値は'#'で囲む。
-<BR>　abatisインスタンスを取得し、parameter（map）とsqlidを渡して実行する。
-<BR>　DB file名を省略した場合はdefault（database.db）名で生成される。
-<BR>　例）AbatisService abatisService = AbatisService.getInstance(getApplicationContext());
-<BR>
+<BR><BR> valuesの下にsqlmaps.xml(ファイル名は任意)を作成する。
+<BR><BR> nameをinitializeし、sqlを登録する。
+<BR><BR> DB fileが存在しない場合（アプリ初回起動時）このsqlでdb初期化が行われる。
+<BR><BR> データ取得(select)
+<BR><BR> nameにsqlidを指定してselect文を登録する。bindする値は'#'で囲む。
+<BR><BR> abatisインスタンスを取得し、parameter（map）とsqlidを渡して結果listを得る。
+<BR><BR> DB file名を省略した場合はdefault（database.db）名で生成される。
+<BR><BR>　例）AbatisService abatisService = AbatisService.getInstance(getApplicationContext());
+<BR><BR>　データ更新(insert, update, delete)
+<BR><BR>　nameにsqlidを指定してinsertおよびupdate文を登録する。bindする値は'#'で囲む。
+<BR><BR>　abatisインスタンスを取得し、parameter（map）とsqlidを渡して実行する。
+<BR><BR>　DB file名を省略した場合はdefault（database.db）名で生成される。
+<BR><BR>　例）AbatisService abatisService = AbatisService.getInstance(getApplicationContext());
+<BR><BR>
 <BR>
 <BR>
 <BR>
