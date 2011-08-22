@@ -1,8 +1,9 @@
 #summary QuickStart for using aBatis
 <Table>
-<
+<tr><th>
+設定 </th></tr><p>
 
-設定 <p>
+
 <img src="http://abatis.android-fun.jp/abatis_01.png"/><BR>   図-1<BR>
  valuesの下にsqlmaps.xml(ファイル名は任意)を作成する。（図-1参照）<BR><BR> 
 
@@ -42,3 +43,7 @@ abatisインスタンスを取得し、parameter（map）とsqlidを渡して実
 DB file名を省略した場合はdefault（database.db）名で生成される。<BR><BR>
  
   例） {{{AbatisService abatisService =AbatisService.getInstance(getApplicationContext());}}}<BR><BR>
+
+</Table>
+
+
