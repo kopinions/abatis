@@ -1,10 +1,9 @@
 #summary QuickStart for using aBatis
-<Table>
-<tr>設定</tr><p>
 
-<tr><th>
-<img src="http://abatis.android-fun.jp/abatis_01.png"/><BR>   図-1</th><th>
- valuesの下にsqlmaps.xml(ファイル名は任意)を作成する。（図-1参照）</th></TR><BR><BR> 
+設定<p>
+
+<img src="http://abatis.android-fun.jp/abatis_01.png"/><BR>   図-1
+ valuesの下にsqlmaps.xml(ファイル名は任意)を作成する。（図-1参照）<BR><BR> 
 
 
 <img src="http://abatis.android-fun.jp/abatis_02.png"/><BR>   図-2<BR>
