@@ -1,6 +1,6 @@
 #summary QuickStart for using aBatis
 
-<h3>aBatis is a data mapper framework available for Android that couples objects with stored procedures or SQL statements using an XML descriptor or annotations.</h3><p>
-<h3>aBatis is free software that is distributed under the Apache License 2.0.</h3><p>
-<h3>aBatis is like an Android version of MyBatis.</h3><p>
-<h3>aBatis supports Android 1.6 and up.</h3><p>
+<h2>aBatis is a data mapper framework available for Android that couples objects with stored procedures or SQL statements using an XML descriptor or annotations.</h2><p>
+<h2>aBatis is free software that is distributed under the Apache License 2.0.</h2><p>
+<h2>aBatis is like an Android version of MyBatis.</h2><p>
+<h2>aBatis supports Android 1.6 and up.</h2><p>
