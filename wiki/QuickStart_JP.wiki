@@ -14,10 +14,7 @@
 <BR><BR>　nameにsqlidを指定してinsertおよびupdate文を登録する。bindする値は'#'で囲む。
 <BR><BR>　abatisインスタンスを取得し、parameter（map）とsqlidを渡して実行する。
 <BR><BR>　DB file名を省略した場合はdefault（database.db）名で生成される。
-<BR><BR>
-Someone once said:　
-例） {{{AbatisService abatisService =
-AbatisService.getInstance(getApplicationContext());}}}
+<BR><BR>例） {{{AbatisService abatisService =AbatisService.getInstance(getApplicationContext());}}}
 <BR><BR>
 <BR>
 <BR>
