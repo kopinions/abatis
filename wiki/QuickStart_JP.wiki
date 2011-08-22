@@ -2,8 +2,8 @@
 
   設定 
 
-<BR><BR> valuesの下にsqlmaps.xml(ファイル名は任意)を作成する。
-<BR><BR> nameをinitializeし、sqlを登録する。
+<BR><BR> valuesの下にsqlmaps.xml(ファイル名は任意)を作成する。<BR><BR> 
+nameをinitializeし、sqlを登録する。
 <BR><BR> DB fileが存在しない場合（アプリ初回起動時）このsqlでdb初期化が行われる。
 <BR><BR> データ取得(select)
 <BR><BR> nameにsqlidを指定してselect文を登録する。bindする値は'#'で囲む。
