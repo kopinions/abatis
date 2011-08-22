@@ -1,6 +1,22 @@
 #summary QuickStart for using aBatis
 
+-simple & light ORM library
+-開発期間短縮・工程分担可能 
+
+--shorten a development period
+--independent of development phase
+
+ -webのibatisより使い易い
+--easy-to-use as ibatis
+
+ -ibatisの特徴を継承 
+--carrying ibatis's feature
+
+
+ -sdk1.6から使える
+
+
 <h2>aBatis is a data mapper framework available for Android that couples objects with stored procedures or SQL statements using an XML descriptor or annotations.</h2><p>
 <h2>aBatis is free software that is distributed under the Apache License 2.0.</h2><p>
-<h2>aBatis is like an Android version of MyBatis.</h2><p>
+<h2>aBatis is like an Android equivalent of iBatis.</h2><p>
 <h2>aBatis supports Android 1.6 and up.</h2><p>
