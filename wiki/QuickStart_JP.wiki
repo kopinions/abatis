@@ -7,13 +7,13 @@
 
 
 <img src="http://abatis.android-fun.jp/abatis_02.png"/><BR>   図-2<BR>
-nameをinitializeし、sqlを登録する。<BR><BR> 
+nameをinitializeし、sqlを登録する。<BR>
 
 
-DB fileが存在しない場合（アプリ初回起動時）このsqlでdb初期化が行われる。<BR><BR> 
+DB fileが存在しない場合（アプリ初回起動時）このsqlでdb初期化が行われる。<BR>
 
 
-データ取得(select)<BR><BR> 
+データ取得(select)<BR><BR><BR> 
 
 
 <img src="http://abatis.android-fun.jp/abatis_03.png"/><BR>   図-3<BR>
