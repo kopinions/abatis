@@ -7,23 +7,21 @@
  valuesの下にsqlmaps.xml(ファイル名は任意)を作成する。（図-1参照）<BR><BR> 
 
 
-
+<img src="http://abatis.android-fun.jp/abatis_02.png"/><BR>   図-2<BR>
 nameをinitializeし、sqlを登録する。<BR><BR> 
-
 
 
 DB fileが存在しない場合（アプリ初回起動時）このsqlでdb初期化が行われる。<BR><BR> 
 
 
-
 データ取得(select)<BR><BR> 
 
 
-
+<img src="http://abatis.android-fun.jp/abatis_03.png"/><BR>   図-3<BR>
 nameにsqlidを指定してselect文を登録する。bindする値は'#'で囲む。<BR><BR> 
 
 
-
+<img src="http://abatis.android-fun.jp/abatis_04.png"/><BR>   図-4<BR>
 abatisインスタンスを取得し、parameter（map）とsqlidを渡して結果listを得る。<BR><BR>
 
 DB file名を省略した場合はdefault（database.db）名で生成される。<BR><BR>
@@ -34,7 +32,7 @@ DB file名を省略した場合はdefault（database.db）名で生成される�
 
 
 データ更新{{{(insert, update, delete)}}}<BR><BR>　
-
+<img src="http://abatis.android-fun.jp/abatis_05.png"/><BR>   図-5<BR>
 nameにsqlidを指定してinsertおよびupdate文を登録する。bindする値は'#'で囲む。<BR><BR>　
 
 
