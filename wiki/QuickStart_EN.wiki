@@ -9,7 +9,7 @@ In the new xml file, add new string and name "initialize".<BR>
 Compose Create Table SQL statement as a string resource.<BR>
 
 initialize with the SQL statement during first start-up or<BR> 
-when you create new DB due to no DB exist.<BR><BR>
+when you create new DB.<BR><BR>
 
 <h3>getting data.(select)</h3>
 <img src="http://abatis.android-fun.jp/abatis_03.png"/><BR> figure-3<BR> 
