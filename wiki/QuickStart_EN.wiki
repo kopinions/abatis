@@ -6,9 +6,9 @@ Getting stared with aBatis?<p>
 
 <img src="http://abatis.android-fun.jp/abatis_02.png"/><BR> 図-2<BR> In the new xml file(e.g. sqlmaps.xml), add new string and name "initialize".Compose SQL statement as a string resource.<BR>
 
-initialize with the SQL statement during first system start-up or when DB file is not exist.
+initialize with the SQL statement during first system start-up or when you create new DB due to no DB exist.
 
-データ取得(select)<BR><BR><BR>
+getting data.(select)<BR><BR><BR>
 
 <img src="http://abatis.android-fun.jp/abatis_03.png"/><BR> 図-3<BR> In the xml file, nameにsqlidを指定してselect文を登録する。bindする値は'#'で囲む。<BR><BR>
 
