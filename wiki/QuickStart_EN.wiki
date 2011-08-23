@@ -13,12 +13,12 @@ when you create new DB.<BR><BR>
 
 <h3>getting data.(select)</h3>
 <img src="http://abatis.android-fun.jp/abatis_03.png"/><BR> figure-3<BR> 
-In the xml file, add new string and name "sqlId".
+In the xml file, add new string and name "sqlId".<BR> 
 Compose Select SQL statement as a string resource.<BR> 
 Bind variables should be bracketed with #.<BR><BR>
  
 <img src="http://abatis.android-fun.jp/abatis_04.png"/><BR> figure-4<BR> 
-get aBatis instance and pass parameter（map）and sqlId as an argument to DB.
+get aBatis instance and pass parameter（map）and sqlId as an argument to DB.<BR> 
 Then return result as a list type.<BR><BR>
 When DB file name is omitted, complemented by default name(database.db).<BR><BR>
 
@@ -33,8 +33,8 @@ Bind variables should be bracketed with #.<BR>
 
 <img src="http://abatis.android-fun.jp/abatis_06.png"/><BR>figure-6<BR> 
 
-abatisインスタンスを取得し、parameter（map）とsqlidを渡して実行する。<BR><BR>　
+abatisインスタンスを取得し、parameter（map）とsqlidを渡して実行する。<BR>　
 
-DB file名を省略した場合はdefault（database.db）名で生成される。<BR><BR>
+DB file名を省略した場合はdefault（database.db）名で生成される。<BR>
 
 例） AbatisService abatisService =AbatisService.getInstance(getApplicationContext());<BR><BR>
