@@ -20,8 +20,7 @@ bind variables should be bracketed with #<BR>
 <img src="http://abatis.android-fun.jp/abatis_04.png"/><BR> figure-4<BR> 
 get aBatis instance and pass parameter（map）and sqlid as an argument to DB.
 Then return result as a list type.<BR><BR>
-
-DB file名を省略した場合はdefault（database.db）名で生成される。<BR><BR>
+When DB file name is omitted, complemented by default name(database.db).<BR><BR>
 
 　e.g.） AbatisService abatisService = AbatisService.getInstance(getApplicationContext());<BR><BR>　
 
