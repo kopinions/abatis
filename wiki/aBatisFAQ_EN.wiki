@@ -1,4 +1,5 @@
 #summary aBatis FAQ & common answers.
+#labels Featured,Phase-QA
 
 <h2>Frequently Asked Questions</h2>
 <p><p>
