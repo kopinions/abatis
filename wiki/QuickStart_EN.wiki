@@ -8,7 +8,7 @@ Getting stared with aBatis<p>
 In the new xml file, add new string and name "initialize".<BR>
 Compose Create Table SQL statement as a string resource.<BR>
 
-initialize with the SQL statement during first system start-up or<BR> 
+initialize with the SQL statement during first start-up or<BR> 
 when you create new DB due to no DB exist.<BR><BR>
 
 <h3>getting data.(select)</h3>
