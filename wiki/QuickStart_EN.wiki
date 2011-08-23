@@ -6,15 +6,20 @@ Getting stared with aBatis?<p>
 
 <img src="http://abatis.android-fun.jp/abatis_02.png"/><BR> figure-2<BR> 
 In the new xml file, add new string and name "initialize".<BR>
-Compose SQL statement as a string resource.<BR>
+Compose Create Table SQL statement as a string resource.<BR>
 
-initialize with the SQL statement during first system start-up or when you create new DB due to no DB exist.
+initialize with the SQL statement during first system start-up or<BR> 
+when you create new DB due to no DB exist.<BR><BR>
 
-getting data.(select)<BR><BR><BR>
-
-<img src="http://abatis.android-fun.jp/abatis_03.png"/><BR> figure-3<BR> In the xml file, nameにsqlidを指定してselect文を登録する。bindする値は'#'で囲む。<BR>
-
-<img src="http://abatis.android-fun.jp/abatis_04.png"/><BR> figure-4<BR> abatisインスタンスを取得し、parameter（map）とsqlidを渡して結果listを得る。<BR><BR>
+<h3>getting data.(select)</h3>
+<img src="http://abatis.android-fun.jp/abatis_03.png"/><BR> figure-3<BR> 
+In the xml file, add new string and name "sqlId".
+Compose Select SQL statement as a string resource.
+bind variables should be bracketed with #<BR>
+ 
+<img src="http://abatis.android-fun.jp/abatis_04.png"/><BR> figure-4<BR> 
+get aBatis instance and pass parameter（map）and sqlid as an argument to DB.
+Then return result as a list type.<BR><BR>
 
 DB file名を省略した場合はdefault（database.db）名で生成される。<BR><BR>
 
