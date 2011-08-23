@@ -10,7 +10,8 @@
 nameをinitializeし、sqlを登録する。<BR>
 
 
-DB fileが存在しない場合（アプリ初回起動時）このsqlでdb初期化が行われる。<BR>
+DB fileが存在しない場合（アプリ初回起動時）DBファイルを<BR>
+引数のDB名を利用して生成し、 このsqlでdb初期化が行われる。<BR>
 
 
 データ取得(select)<BR><BR><BR> 
