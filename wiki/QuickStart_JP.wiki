@@ -1,4 +1,5 @@
 #summary QuickStart for using aBatis
+#slidebar QuickStart_JP
 
 設定<p>
 
