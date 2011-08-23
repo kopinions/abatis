@@ -15,7 +15,7 @@ when you create new DB.<BR><BR>
 <img src="http://abatis.android-fun.jp/abatis_03.png"/><BR> figure-3<BR> 
 In the xml file, add new string and name "sqlId".
 Compose Select SQL statement as a string resource.<BR> 
-Bind variables should be bracketed with #<BR><BR>
+Bind variables should be bracketed with #.<BR><BR>
  
 <img src="http://abatis.android-fun.jp/abatis_04.png"/><BR> figure-4<BR> 
 get aBatis instance and pass parameter（map）and sqlId as an argument to DB.
