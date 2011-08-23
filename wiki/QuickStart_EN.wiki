@@ -21,7 +21,7 @@ Bind variables should be bracketed with #.<BR><BR>
 <h3>Updating data(insert, update, delete)</h3><BR><BR>
 <img src="http://abatis.android-fun.jp/abatis_03.png"/><BR> figure-4<BR> 
 get aBatis instance and pass parameter（map）and sqlId as an argument to DB.<BR> 
-Then return result as a list type.<BR><BR>
+Then return result as a list type.<BR>
 When DB file name is omitted, complemented by default name(database.db).<BR><BR>
 
 {{{　e.g.） AbatisService abatisService = AbatisService.getInstance(getApplicationContext());}}}<BR><BR>　
