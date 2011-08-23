@@ -1,6 +1,6 @@
 #summary QuickStart for using aBatis
 
-Getting stared with aBatis?<p>
+Getting stared with aBatis<p>
 
 <img src="http://abatis.android-fun.jp/abatis_01.png"/><BR> figure-1<BR> Inside the res/values/ folder, create a new xml file(e.g. sqlmaps.xml). （see figure-1）<BR><BR>
 
@@ -15,16 +15,21 @@ when you create new DB due to no DB exist.<BR><BR>
 <img src="http://abatis.android-fun.jp/abatis_03.png"/><BR> figure-3<BR> 
 In the xml file, add new string and name "sqlId".
 Compose Select SQL statement as a string resource.
-bind variables should be bracketed with #<BR>
+Bind variables should be bracketed with #<BR>
  
 <img src="http://abatis.android-fun.jp/abatis_04.png"/><BR> figure-4<BR> 
-get aBatis instance and pass parameter（map）and sqlid as an argument to DB.
+get aBatis instance and pass parameter（map）and sqlId as an argument to DB.
 Then return result as a list type.<BR><BR>
 When DB file name is omitted, complemented by default name(database.db).<BR><BR>
 
 　e.g.） AbatisService abatisService = AbatisService.getInstance(getApplicationContext());<BR><BR>　
 
-データ更新(insert, update, delete)<BR><BR>　 <img src="http://abatis.android-fun.jp/abatis_05.png"/><BR> figure-5<BR> nameにsqlidを指定してinsertおよびupdate文を登録する。bindする値は'#'で囲む。<BR><BR>　
+<h3>Updating data(insert, update, delete)</h3><BR><BR>
+<img src="http://abatis.android-fun.jp/abatis_05.png"/><BR>figure-5<BR>
+In the new xml file, add new string and name "sqlId".<BR>
+Compose insert/update/delete SQL statement as a string resource.<BR>
+Bind variables should be bracketed with #<BR>
+<BR><BR>　
 
 img src=""/><BR> figure-6<BR> abatisインスタンスを取得し、parameter（map）とsqlidを渡して実行する。<BR><BR>　
 
