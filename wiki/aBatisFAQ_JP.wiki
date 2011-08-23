@@ -1,5 +1,5 @@
 #summary aBatis FAQ & common answers.
-#labels aBatis
+#labels aBatis,Featured,Phase-QA
 
 <h2>よくある質問 </h2>
 <p><p>
