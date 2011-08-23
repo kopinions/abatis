@@ -12,12 +12,12 @@ initialize with the SQL statement during first start-up or<BR>
 when you create new DB.<BR><BR>
 
 <h3>getting data.(select)</h3>
-<img src="http://abatis.android-fun.jp/abatis_03.png"/><BR> figure-3<BR> 
+<img src="http://abatis.android-fun.jp/abatis_04.png"/><BR> figure-3<BR> 
 In the xml file, add new string and name "sqlId".<BR> 
 Compose Select SQL statement as a string resource.<BR> 
 Bind variables should be bracketed with #.<BR><BR>
  
-<img src="http://abatis.android-fun.jp/abatis_04.png"/><BR> figure-4<BR> 
+<img src="http://abatis.android-fun.jp/abatis_03.png"/><BR> figure-4<BR> 
 get aBatis instance and pass parameter（map）and sqlId as an argument to DB.<BR> 
 Then return result as a list type.<BR><BR>
 When DB file name is omitted, complemented by default name(database.db).<BR><BR>
