@@ -1,5 +1,5 @@
 #summary QuickStart for using aBatis
-#sidebar NameOfPage
+#sidebar QuickStart_JP
 
 
 設定<p>
