@@ -14,7 +14,7 @@ when you create new DB.<BR><BR>
 <h3>getting data.(select)</h3>
 <img src="http://abatis.android-fun.jp/abatis_03.png"/><BR> figure-3<BR> 
 In the xml file, add new string and name "sqlId".
-Compose Select SQL statement as a string resource.
+Compose Select SQL statement as a string resource.<BR> 
 Bind variables should be bracketed with #<BR>
  
 <img src="http://abatis.android-fun.jp/abatis_04.png"/><BR> figure-4<BR> 
@@ -31,7 +31,9 @@ Compose insert/update/delete SQL statement as a string resource.<BR>
 Bind variables should be bracketed with #<BR>
 <BR><BR>　
 
-img src=""/><BR> figure-6<BR> abatisインスタンスを取得し、parameter（map）とsqlidを渡して実行する。<BR><BR>　
+<img src="http://abatis.android-fun.jp/abatis_06.png"/><BR>figure-6<BR> 
+
+abatisインスタンスを取得し、parameter（map）とsqlidを渡して実行する。<BR><BR>　
 
 DB file名を省略した場合はdefault（database.db）名で生成される。<BR><BR>
 
