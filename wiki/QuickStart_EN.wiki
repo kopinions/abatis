@@ -2,9 +2,9 @@
 
 Getting stared with aBatis?<p>
 
-<img src="http://abatis.android-fun.jp/abatis_01.png"/><BR> figure-1<BR> Inside the res/values/ folder, create a new xml file. （see figure-1）<BR><BR>
+<img src="http://abatis.android-fun.jp/abatis_01.png"/><BR> figure-1<BR> Inside the res/values/ folder, create a new xml file(e.g. sqlmaps.xml). （see figure-1）<BR><BR>
 
-<img src="http://abatis.android-fun.jp/abatis_02.png"/><BR> figure-2<BR> In the new xml file(e.g. sqlmaps.xml), add new string and name "initialize".Compose SQL statement as a string resource.<BR>
+<img src="http://abatis.android-fun.jp/abatis_02.png"/><BR> figure-2<BR> In the new xml file, add new string and name "initialize".Compose SQL statement as a string resource.<BR>
 
 initialize with the SQL statement during first system start-up or when you create new DB due to no DB exist.
 
