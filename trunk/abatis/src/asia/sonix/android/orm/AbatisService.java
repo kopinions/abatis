@@ -18,21 +18,22 @@ import java.util.List;
 import java.util.Map;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 /**
- * AndroidŒü‚¯‚ÌO/RM‚ğ’ñ‹Ÿ‚µ‚Ü‚·B
+ * Androidå‘ã‘ã®O/RMã‚’æä¾›ã—ã¾ã™ã€‚
  * 
  * @author sonix - http://www.sonix.asia
- * @since JDK1.5 Android Level 4
+ * @since JDK1.6 Android Level 3
  *
  */
 public class AbatisService extends SQLiteOpenHelper {
 	
     /**
-     * DB‚ğ‰Šú‰»‚·‚éSQLID
+     * DBã‚’åˆæœŸåŒ–ã™ã‚‹SQLID
      */
 	private static final String INIT_CREATE_SQL = "initialize";
 	
@@ -42,7 +43,7 @@ public class AbatisService extends SQLiteOpenHelper {
 	private static final String DB_FILE_NAME = "database.db";
 	
     /**
-     * ©•ª‚Ìinstance object
+     * è‡ªåˆ†ã®instance object
      */
 	private static AbatisService instance = null;
 	
@@ -57,43 +58,36 @@ public class AbatisService extends SQLiteOpenHelper {
 	private Context context;
 	
     /**
-     * ‰Šú‹N“®”»’èƒvƒ‰ƒO
-     */
-	private boolean isFirstStart = false;
-	
-    /**
-     * Default DB file name‚ğ—˜—p‚·‚éConstructor
+     * Default DB file nameã‚’åˆ©ç”¨ã™ã‚‹Constructor
      *
-     * @param context ŒÄ‚Ño‚µŒ³ContextƒIƒuƒWƒFƒNƒg
+     * @param context å‘¼ã³å‡ºã—å…ƒContextã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
      *
      */
 	private AbatisService(Context context) {
 		super(context, DB_FILE_NAME, null, 1);
 		this.context = context;
-		getDbObject();
 	}
 	
     /**
-     * w’èDB file name‚ğ—˜—p‚·‚éConstructor
+     * æŒ‡å®šDB file nameã‚’åˆ©ç”¨ã™ã‚‹Constructor
      *
-     * @param context ŒÄ‚Ño‚µŒ³ContextƒIƒuƒWƒFƒNƒg
-     * @param dbName ¶¬‚·‚éDB file name
+     * @param context å‘¼ã³å‡ºã—å…ƒContextã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
+     * @param dbName ç”Ÿæˆã™ã‚‹DB file name
      *
      */
 	private AbatisService(Context context, String dbName) {
 		super(context, dbName.concat(".db") , null, 1);
 		this.context = context;
-		getDbObject();
 	}
 
     /**
-     * Default DB file name‚ğ—˜—p‚·‚éŠO•”Constructor 
+     * Default DB file nameã‚’åˆ©ç”¨ã™ã‚‹å¤–éƒ¨Constructor 
      *
-     * @param context ŒÄ‚Ño‚µŒ³ContextƒIƒuƒWƒFƒNƒg
-     * @param dbName ¶¬‚·‚éDB file name
+     * @param context å‘¼ã³å‡ºã—å…ƒContextã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
+     * @param dbName ç”Ÿæˆã™ã‚‹DB file name
      *
      */
-	public static synchronized AbatisService getInstance(Context context) {
+	public static AbatisService getInstance(Context context) {
 		if (instance == null) {
 			instance = new AbatisService(context);
 		}
@@ -101,13 +95,13 @@ public class AbatisService extends SQLiteOpenHelper {
 	}
 	
     /**
-     * w’èDB file name‚ğ—˜—p‚·‚éŠO•”Constructor
+     * æŒ‡å®šDB file nameã‚’åˆ©ç”¨ã™ã‚‹å¤–éƒ¨Constructor
      *
-     * @param context ŒÄ‚Ño‚µŒ³ContextƒIƒuƒWƒFƒNƒg
-     * @param dbName ¶¬‚·‚éDB file name
+     * @param context å‘¼ã³å‡ºã—å…ƒContextã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
+     * @param dbName ç”Ÿæˆã™ã‚‹DB file name
      *
      */
-	public static synchronized AbatisService getInstance(Context context, String dbName) {
+	public static AbatisService getInstance(Context context, String dbName) {
 		if (instance == null) {
 			instance = new AbatisService(context, dbName);
 		}
@@ -129,11 +123,10 @@ public class AbatisService extends SQLiteOpenHelper {
     		String createTabelSql = context.getResources().getString(pointer);
     		db.execSQL(createTabelSql);
     	}
-    	isFirstStart = true;
 	}
 
     /**
-     * for upgrade (ƒo[ƒWƒ‡ƒ“0.1‚Å‚ÍÀ‘•‚³‚ê‚Ä‚¢‚È‚¢)
+     * for upgrade (ãƒãƒ¼ã‚¸ãƒ§ãƒ³0.1ã§ã¯å®Ÿè£…ã•ã‚Œã¦ã„ãªã„)
      *
      * @param db SQLiteDatabase object
      * @param oldVersion old version value
@@ -146,10 +139,10 @@ public class AbatisService extends SQLiteOpenHelper {
 	}
 	
     /**
-     * w’è‚µ‚½SQLID‚Éparameter‚ğmapping‚µ‚ÄAƒNƒGƒŠ‚·‚éBŒ‹‰Êmap‚ğƒŠƒXƒg‚Å•Ô‹pB
+     * æŒ‡å®šã—ãŸSQLIDã«parameterã‚’mappingã—ã¦ã€ã‚¯ã‚¨ãƒªã™ã‚‹ã€‚çµæœmapã‚’ãƒªã‚¹ãƒˆã§è¿”å´ã€‚
      * 
      * <p>
-     * mapping‚ÌAparameter‚ª‘«‚è‚È‚¢ê‡‚Ínull‚ğ•Ô‚·B
+     * mappingã®æ™‚ã€parameterãŒè¶³ã‚Šãªã„å ´åˆã¯nullã‚’è¿”ã™ã€‚
      * </p>
      *
      * @param sqlId SQLID
@@ -158,7 +151,8 @@ public class AbatisService extends SQLiteOpenHelper {
      * @return List<Map<String, Object>> result
      */
 	public List<Map<String, Object>> executeForMapList(String sqlId, Map<String, Object> bindParams) {
-        int pointer = context.getResources().getIdentifier(sqlId, "string", context.getPackageName());
+	    getDbObject();
+	    int pointer = context.getResources().getIdentifier(sqlId, "string", context.getPackageName());
     	if (pointer == 0) {
     		Log.e(this.getClass().getName(), "undefined sql id");
     		return null;
@@ -176,9 +170,12 @@ public class AbatisService extends SQLiteOpenHelper {
     		Log.e(this.getClass().getName(), "undefined parameter");
     		return null;
     	}
-        Cursor cursor = getWritableDatabase().rawQuery(sql, null);
-        String[] columnNames = cursor.getColumnNames();
+        Cursor cursor = dbObj.rawQuery(sql, null);
         List<Map<String, Object>> mapList = new ArrayList<Map<String,Object>>();
+        if (cursor == null) {
+            return null;
+        }
+        String[] columnNames = cursor.getColumnNames();
         while(cursor.moveToNext()) {
         	Map<String, Object> map = new HashMap<String, Object>();
         	int i = 0;
@@ -189,23 +186,25 @@ public class AbatisService extends SQLiteOpenHelper {
         	mapList.add(map);
         }
         cursor.close();
+        dbObj.close();
         return mapList;
 	}
 	
     /**
-     * w’è‚µ‚½SQLID‚Éparameter‚ğmapping‚µ‚ÄAÀs‚·‚éB
+     * æŒ‡å®šã—ãŸSQLIDã«parameterã‚’mappingã—ã¦ã€å®Ÿè¡Œã™ã‚‹ã€‚
      * 
      * <p>
-     * mapping‚ÌAparameter‚ª‘«‚è‚È‚¢ê‡‚Í0‚ğ•Ô‚·B
+     * mappingã®æ™‚ã€parameterãŒè¶³ã‚Šãªã„å ´åˆã¯0ã‚’è¿”ã™ã€‚
      * </p>
      *
      * @param sqlId SQLiteDatabase object
      * @param bindParams old version value
      * 
-     * @return int Às‚É‚æ‚Á‚Ä‰e‹¿‚ğ‚à‚ç‚Á‚½s”
+     * @return int å®Ÿè¡Œã«ã‚ˆã£ã¦å½±éŸ¿ã‚’ã‚‚ã‚‰ã£ãŸè¡Œæ•°
      */
     public int execute(String sqlId, Map<String, Object> bindParams) {
-    	int row = 0;
+        getDbObject();
+        int row = 0;
     	int pointer = context.getResources().getIdentifier(sqlId, "string", context.getPackageName());
     	if (pointer == 0) {
     		Log.e(this.getClass().getName(), "undefined sql id");
@@ -224,27 +223,23 @@ public class AbatisService extends SQLiteOpenHelper {
     		Log.e(this.getClass().getName(), "undefined parameter");
     		return row;
     	}
-    	getWritableDatabase().execSQL(sql);
-    	row += 1;
+    	try {
+    	    dbObj.execSQL(sql);
+    	    dbObj.close();
+    	    row += 1;
+    	} catch (SQLException e) {
+            return row;
+        }
         return row;
     }
-
-    /**
-     * DB‰Šú‰»”»’èƒvƒ‰ƒO‚Ì’l‚ğæ“¾‚·‚éB
-     * 
-     * @return boolean DB‰Šú‰»”»’èƒvƒ‰ƒO
-     */
-	public boolean isFirstStart() {
-		return isFirstStart;
-	}
 	
     /**
-     * SQLiteDatabase Object‚ğæ“¾‚·‚éB
+     * SQLiteDatabase Objectã‚’å–å¾—ã™ã‚‹ã€‚
      * 
      * @return SQLiteDatabase SQLiteDatabase Object
      */
-	private synchronized SQLiteDatabase getDbObject() {
-		if (dbObj == null) {
+	private SQLiteDatabase getDbObject() {
+		if (dbObj == null || !dbObj.isOpen()) {
 			dbObj = getWritableDatabase();
 		}
 		return dbObj;
