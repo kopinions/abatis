@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="initialize">
+    <string name="abatis_initialize">
         create table tb_ormtest (
             orm_id integer primary key,
             orm_name text not null,
@@ -36,5 +36,14 @@
             tb_ormtest
         where
             orm_age = #orm_age#;
+    </string>
+        <string name="sqlId005">
+        select
+            orm_id, 
+            orm_name, 
+            orm_age, 
+            orm_memo
+        from
+            tb_ormtest;
     </string>
 </resources>
