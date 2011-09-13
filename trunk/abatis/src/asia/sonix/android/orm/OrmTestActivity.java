@@ -35,7 +35,7 @@ public class OrmTestActivity extends Activity {
         
         List<TestBean> result2 = abatisService.executeForBeanList("sqlId005", null, TestBean.class);
         for (TestBean testBean : result2) {
-            Log.d("test", "info : " + testBean.getOrm_id() + ", " + testBean.getOrm_name() + ", " + testBean.getOrm_age() + ", " + testBean.getOrm_memo());
+            Log.d("test", "info : " + testBean.getOrmId() + ", " + testBean.getOrmName() + ", " + testBean.getOrmAge() + ", " + testBean.getOrmMemo());
         }
         Log.d("test", "get result : " + result2.size());
     }
