@@ -19,6 +19,8 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -148,7 +150,63 @@ public class AbatisService extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         // no poc
     }
- 
+    
+    /**
+     * 指定したSQLIDにparameterをmappingして、クエリする。結果mapを返却。
+     * 
+     * <p>
+     * mappingの時、parameterが足りない場合はnullを返す。
+     * また、結果がない場合nullを返す。
+     * </p>
+     *
+     * @param sqlId SQLID
+     * @param bindParams sql parameter
+     * 
+     * @return Map<String, Object> result
+     */
+    public Map<String, Object> executeForMap(String sqlId, Map<String, Object> bindParams) {
+        getDbObject();
+        int pointer = context.getResources().getIdentifier(sqlId, "string", context.getPackageName());
+        if (pointer == 0) {
+            Log.e(TAG, "undefined sql id");
+            return null;
+        }
+        String sql = context.getResources().getString(pointer);
+        if (bindParams != null) {
+            Iterator<String> mapIterator = bindParams.keySet().iterator();
+            while (mapIterator.hasNext()) {
+                String key = mapIterator.next();
+                Object value = bindParams.get(key);
+                sql = sql.replaceAll("#" + key.toLowerCase() + "#", "'" + value.toString() + "'");
+            }
+        }
+        if (sql.indexOf('#') != -1) {
+            Log.e(TAG, "undefined parameter");
+            return null;
+        }
+        Cursor cursor = dbObj.rawQuery(sql, null);
+        List<Map<String, Object>> mapList = new ArrayList<Map<String,Object>>();
+        if (cursor == null) {
+            return null;
+        }
+        String[] columnNames = cursor.getColumnNames();
+        while(cursor.moveToNext()) {
+            Map<String, Object> map = new HashMap<String, Object>();
+            int i = 0;
+            for (String columnName : columnNames) {
+                map.put(columnName, cursor.getString(i));
+                i++;
+            }
+            mapList.add(map);
+        }
+        if (mapList.size() <= 0) {
+            return null;
+        }
+        cursor.close();
+        dbObj.close();
+        return mapList.get(1);
+    }
+    
     /**
      * 指定したSQLIDにparameterをmappingして、クエリする。結果mapをリストで返却。
      * 
@@ -202,6 +260,74 @@ public class AbatisService extends SQLiteOpenHelper {
     }
 	
     /**
+     * 指定したSQLIDにparameterをmappingして、クエリする。結果beanで返却。
+     * 
+     * <p>
+     * mappingの時、parameterが足りない場合はnullを返す。
+     * また、結果がない場合nullを返す。
+     * </p>
+     *
+     * @param sqlId SQLID
+     * @param bindParams sql parameter
+     * @param bean bean class of result 
+     * 
+     * @return List<Map<String, Object>> result
+     */
+    @SuppressWarnings({ "unchecked", "rawtypes" })
+    public <T> T executeForBean(String sqlId, Map<String, Object> bindParams, Class bean) {
+        getDbObject();
+        int pointer = context.getResources().getIdentifier(sqlId, "string", context.getPackageName());
+        if (pointer == 0) {
+            Log.e(TAG, "undefined sql id");
+            return null;
+        }
+        String sql = context.getResources().getString(pointer);
+        if (bindParams != null) {
+            Iterator<String> mapIterator = bindParams.keySet().iterator();
+            while (mapIterator.hasNext()) {
+                String key = mapIterator.next();
+                Object value = bindParams.get(key);
+                sql = sql.replaceAll("#" + key.toLowerCase() + "#", "'" + value.toString() + "'");
+            }
+        }
+        if (sql.indexOf('#') != -1) {
+            Log.e(TAG, "undefined parameter");
+            return null;
+        }
+        Cursor cursor = dbObj.rawQuery(sql, null);
+        List<T> objectList = new ArrayList<T>();
+        if (cursor == null) {
+            return null;
+        }
+        String[] columnNames = cursor.getColumnNames();
+        T beanObj = null;
+        // get bean class package
+        Package beanPackage = bean.getPackage();
+        while(cursor.moveToNext()) {
+            Map<String, Object> map = new HashMap<String, Object>();
+            int i = 0;
+            for (String columnName : columnNames) {
+                map.put(chgDataName(columnName), cursor.getString(i));
+                i++;
+            }
+            JSONObject json = new JSONObject(map);
+            try {
+                beanObj = (T)parse(json.toString(), bean, beanPackage.getName());
+            } catch (Exception e) {
+                Log.d(TAG, e.toString());
+                return null;
+            } 
+            objectList.add(beanObj);
+        }
+        if (objectList.size() <= 0) {
+            return null;
+        }
+        cursor.close();
+        dbObj.close();
+        return objectList.get(1);
+    }
+    
+    /**
      * 指定したSQLIDにparameterをmappingして、クエリする。結果beanをリストで返却。
      * 
      * <p>
@@ -248,7 +374,7 @@ public class AbatisService extends SQLiteOpenHelper {
             Map<String, Object> map = new HashMap<String, Object>();
             int i = 0;
             for (String columnName : columnNames) {
-                map.put(columnName, cursor.getString(i));
+                map.put(chgDataName(columnName), cursor.getString(i));
                 i++;
             }
             JSONObject json = new JSONObject(map);
@@ -459,17 +585,34 @@ public class AbatisService extends SQLiteOpenHelper {
         if(fieldName == null || fieldName == "") {
             return "";
         }
-        String method_name = "";
+        String methodName = "";
         if(type == 0) {
-            method_name = "get";
+            methodName = "get";
         } else {
-            method_name = "set";
+            methodName = "set";
         }
-        method_name += fieldName.substring(0, 1).toUpperCase();
+        methodName += fieldName.substring(0, 1).toUpperCase();
         if (fieldName.length() == 1) {
-            return method_name;
+            return methodName;
         }
-        method_name += fieldName.substring(1);
-        return method_name;
+        methodName += fieldName.substring(1);
+        return methodName;
+    }
+    
+    /**
+     * Databaseカラム名をjava bean名に変換する。
+     * @param targetStr databaseカラム名
+     * @return String bean data名
+     */
+    private String chgDataName(String targetStr) {
+        Pattern p = Pattern.compile("_([a-z])");
+        Matcher m = p.matcher(targetStr.toLowerCase());
+
+        StringBuffer sb = new StringBuffer(targetStr.length());
+        while (m.find()) {
+            m.appendReplacement(sb, m.group(1).toUpperCase());
+        }
+        m.appendTail(sb);
+        return sb.toString();
     }
 }
