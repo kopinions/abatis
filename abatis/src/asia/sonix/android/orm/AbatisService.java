@@ -300,14 +300,18 @@ public class AbatisService extends SQLiteOpenHelper {
             return null;
         }
         String[] columnNames = cursor.getColumnNames();
+        List<String> dataNames = new ArrayList<String>();
+        for (String columnName : columnNames) {
+            dataNames.add(chgDataName(columnName));
+        } 
         T beanObj = null;
         // get bean class package
         Package beanPackage = bean.getPackage();
         while(cursor.moveToNext()) {
             Map<String, Object> map = new HashMap<String, Object>();
             int i = 0;
-            for (String columnName : columnNames) {
-                map.put(chgDataName(columnName), cursor.getString(i));
+            for (String dataName : dataNames) {
+                map.put(dataName, cursor.getString(i));
                 i++;
             }
             JSONObject json = new JSONObject(map);
@@ -367,14 +371,18 @@ public class AbatisService extends SQLiteOpenHelper {
             return null;
         }
         String[] columnNames = cursor.getColumnNames();
+        List<String> dataNames = new ArrayList<String>();
+        for (String columnName : columnNames) {
+            dataNames.add(chgDataName(columnName));
+        } 
         T beanObj = null;
         // get bean class package
         Package beanPackage = bean.getPackage();
         while(cursor.moveToNext()) {
             Map<String, Object> map = new HashMap<String, Object>();
             int i = 0;
-            for (String columnName : columnNames) {
-                map.put(chgDataName(columnName), cursor.getString(i));
+            for (String dataName : dataNames) {
+                map.put(dataName, cursor.getString(i));
                 i++;
             }
             JSONObject json = new JSONObject(map);
