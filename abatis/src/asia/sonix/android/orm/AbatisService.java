@@ -214,8 +214,8 @@ public class AbatisService extends SQLiteOpenHelper {
      * 
      * @return List<Map<String, Object>> result
      */
-    @SuppressWarnings("rawtypes")
-    public List<Object> executeForBeanList(String sqlId, Map<String, Object> bindParams, Class bean) {
+    @SuppressWarnings({ "unchecked", "rawtypes" })
+    public <T>List<T> executeForBeanList(String sqlId, Map<String, Object> bindParams, Class bean) {
         getDbObject();
         int pointer = context.getResources().getIdentifier(sqlId, "string", context.getPackageName());
         if (pointer == 0) {
@@ -236,14 +236,14 @@ public class AbatisService extends SQLiteOpenHelper {
             return null;
         }
         Cursor cursor = dbObj.rawQuery(sql, null);
-        List<Object> objectList = new ArrayList<Object>();
+        List<T> objectList = new ArrayList<T>();
         if (cursor == null) {
             return null;
         }
         String[] columnNames = cursor.getColumnNames();
-        Object beanObj = null;
+        T beanObj = null;
         // get bean class package
-        Package beanPackage = bean.getClass().getPackage();
+        Package beanPackage = bean.getPackage();
         while(cursor.moveToNext()) {
             Map<String, Object> map = new HashMap<String, Object>();
             int i = 0;
@@ -253,7 +253,7 @@ public class AbatisService extends SQLiteOpenHelper {
             }
             JSONObject json = new JSONObject(map);
             try {
-                beanObj = parse(json.toString(), bean, beanPackage.getName());
+                beanObj = (T)parse(json.toString(), bean, beanPackage.getName());
             } catch (Exception e) {
                 Log.d(TAG, e.toString());
                 return null;

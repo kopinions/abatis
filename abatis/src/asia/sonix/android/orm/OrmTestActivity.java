@@ -33,10 +33,9 @@ public class OrmTestActivity extends Activity {
         List<Map<String, Object>> result = abatisService.executeForMapList("sqlId004", param);
         Log.d("test", "get result : " + result.size());
         
-        List<Object> result2 = abatisService.executeForBeanList("sqlId005", null, TestBean.class);
-        for (Object testBean : result2) {
-            TestBean bean = (TestBean)testBean; 
-            Log.d("test", "info : " + bean.getOrm_id() + ", " + bean.getOrm_name() + ", " + bean.getOrm_age() + ", " + bean.getOrm_memo());
+        List<TestBean> result2 = abatisService.executeForBeanList("sqlId005", null, TestBean.class);
+        for (TestBean testBean : result2) {
+            Log.d("test", "info : " + testBean.getOrm_id() + ", " + testBean.getOrm_name() + ", " + testBean.getOrm_age() + ", " + testBean.getOrm_memo());
         }
         Log.d("test", "get result : " + result2.size());
     }
