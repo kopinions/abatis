@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="abatis_initialize">
+    <string name="initialize">
         create table tb_ormtest (
             orm_id integer primary key,
             orm_name text not null,
