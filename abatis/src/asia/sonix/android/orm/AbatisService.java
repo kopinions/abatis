@@ -37,7 +37,7 @@ import android.util.Log;
  * Android向けのO/RMを提供します。
  * 
  * @author sonix - http://www.sonix.asia
- * @since JDK1.6 Android Level 3
+ * @since JDK1.5 Android Level 3
  *
  */
 public class AbatisService extends SQLiteOpenHelper {
