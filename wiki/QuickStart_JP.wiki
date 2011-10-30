@@ -38,7 +38,7 @@ DB file名を省略した場合はdefault（database.db）名で生成される�
 <img src="http://abatis.android-fun.jp/abatis_05.png"/><BR>   図-5<BR>
 nameにsqlidを指定してinsertおよびupdate文を登録する。bindする値は'#'で囲む。<BR><BR>　
 
-img src="http://abatis.android-fun.jp/abatis_06.png"/><BR>   図-6<BR>
+<img src="http://abatis.android-fun.jp/abatis_06.png"/><BR>   図-6<BR>
 abatisインスタンスを取得し、parameter（map）とsqlidを渡して実行する。<BR><BR>　
 
 
